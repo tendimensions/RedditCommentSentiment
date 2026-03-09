@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Reddit Comment Sentiment",
+  "version": "1.0.0",
+  "description": "Extract Reddit comment threads and analyze them with an LLM.",
+  "permissions": ["storage", "activeTab", "tabs"],
+  "host_permissions": [
+    "https://www.reddit.com/*",
+    "https://api.anthropic.com/*",
+    "https://api.openai.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.reddit.com/r/*/comments/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Reddit Comment Sentiment"
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  }
+}

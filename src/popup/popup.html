@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reddit Comment Sentiment</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Reddit Sentiment</h1>
+        <button id="open-options" class="icon-btn" title="Settings" aria-label="Open settings">
+          &#9881;
+        </button>
+      </header>
+
+      <main>
+        <div id="status-msg" class="status hidden" role="status"></div>
+
+        <!-- Always-visible extract trigger -->
+        <section id="section-extract">
+          <button id="btn-summarize" class="btn btn-primary btn-full">
+            Summarize
+          </button>
+        </section>
+
+        <!-- Post-extraction actions -->
+        <section id="section-actions" class="hidden">
+          <div class="action-row">
+            <button id="btn-save-json" class="btn btn-secondary">Save JSON</button>
+            <button id="btn-send-llm" class="btn btn-primary">Send to LLM</button>
+          </div>
+        </section>
+
+        <!-- Analysis result -->
+        <section id="section-result" class="hidden">
+          <div id="result-sentiment" class="sentiment-badge"></div>
+          <h2>Summary</h2>
+          <p id="result-summary"></p>
+          <h2>Themes</h2>
+          <ul id="result-themes"></ul>
+          <div id="result-disagreements-section" class="hidden">
+            <h2>Notable Disagreements</h2>
+            <ul id="result-disagreements"></ul>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

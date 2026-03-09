@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reddit Comment Sentiment – Settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Reddit Comment Sentiment</h1>
+        <p class="subtitle">Settings</p>
+      </header>
+
+      <main>
+        <form id="settings-form">
+          <div class="field">
+            <label for="provider">LLM Provider</label>
+            <select id="provider" name="provider">
+              <option value="anthropic">Anthropic (Claude)</option>
+              <option value="openai">OpenAI (GPT)</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="api-key">API Key</label>
+            <input
+              type="password"
+              id="api-key"
+              name="apiKey"
+              placeholder="Paste your API key here"
+              autocomplete="off"
+              spellcheck="false"
+            />
+          </div>
+
+          <div class="field">
+            <label for="model">
+              Model
+              <span class="label-hint">(optional — leave blank for default)</span>
+            </label>
+            <input
+              type="text"
+              id="model"
+              name="model"
+              placeholder="e.g. claude-sonnet-4-6 or gpt-4o"
+              spellcheck="false"
+            />
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save Settings</button>
+          </div>
+
+          <div id="status-msg" class="status hidden" role="status"></div>
+        </form>
+
+        <section class="help">
+          <h2>Provider Defaults</h2>
+          <dl>
+            <dt>Anthropic</dt>
+            <dd>
+              Default model: <code>claude-sonnet-4-6</code>.<br />
+              Get your API key at <strong>console.anthropic.com</strong>.
+            </dd>
+            <dt>OpenAI</dt>
+            <dd>
+              Default model: <code>gpt-4o</code>.<br />
+              Get your API key at <strong>platform.openai.com</strong>.
+            </dd>
+          </dl>
+          <p class="note">
+            Your API key is stored locally in browser extension storage and is
+            only sent to the selected provider's API endpoint.
+          </p>
+        </section>
+      </main>
+    </div>
+    <script src="options.js"></script>
+  </body>
+</html>
