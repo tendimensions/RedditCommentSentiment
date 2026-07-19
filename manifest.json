@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Reddit Comment Sentiment",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Extract Reddit comment threads and analyze them with an LLM.",
   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvIWhoZRpIcfNoNmH9GutJXHm4Fbi7GP7d1zaFSNETmojPQC4WdRMrmlV1N2R6Mm8EKvqR83clgUYC3N43OAZKuu6DwlV1+Mm/nQCAxFU+WWp50KudUBe/Ns3CC/JQ+Rbc+vn2jyjBM6IlS3TkJwzfC+iSj5U0LNiF/s/p2/k5appCPI9Q5rGpGbBO3K+2mrO/M//PzjlO2271R7h1dWCQUvQzdoNjyI8cEd7b0EJaHFEX/ZayOoR1rBnw+QQqE4Jl5yBrNjVZtiY1yIEDxJsnksLQ7jBKIjiVzxNVuFeOYFv56CdLTl3NS84tckTwqGRzaEFfnocWJzLAv1tgaIMEQIDAQAB",
   "update_url": "https://mcp.tendimensions.com/extensions/reddit-comment-sentiment/update.xml",
@@ -22,9 +22,21 @@
       "run_at": "document_idle"
     }
   ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
   "action": {
     "default_popup": "popup/popup.html",
-    "default_title": "Reddit Comment Sentiment"
+    "default_title": "Reddit Comment Sentiment",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
   },
   "options_ui": {
     "page": "options/options.html",

@@ -125,6 +125,53 @@ Browser extension project for extracting comments from a standard Reddit post pa
 - API keys must never be exposed to page JavaScript.
 - Analysis quality depends on extraction quality and prompt design.
 
+## Installation
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or later recommended)
+- npm (included with Node.js)
+- A Chromium-based browser: Chrome, Edge, or Brave
+
+### Build
+
+```bash
+# Install dependencies
+npm install
+
+# Production build (output written to dist/)
+npm run build
+
+# Development build (includes source maps)
+npm run dev
+```
+
+### Load the extension in Chrome / Edge / Brave
+
+1. Open your browser and navigate to the extensions page:
+   - Chrome: `chrome://extensions`
+   - Edge: `edge://extensions`
+   - Brave: `brave://extensions`
+2. Enable **Developer mode** (toggle in the top-right corner).
+3. Click **Load unpacked**.
+4. Select the `dist/` folder inside this repository.
+5. The **Reddit Comment Sentiment** extension will appear in your toolbar.
+
+### Configure your API key
+
+Before using the LLM analysis feature you must supply an API key:
+
+1. Click the extension icon and then open **Settings**, or right-click the icon and choose **Options**.
+2. Select your provider (Anthropic or OpenAI) and paste your API key.
+3. Save — the **Send to LLM** button in the popup will become active.
+
+### Usage
+
+1. Navigate to any Reddit post (`reddit.com/r/.../comments/...`).
+2. Click the **Reddit Comment Sentiment** extension icon.
+3. Click **Summarize** to extract the visible comment thread.
+4. Use **Save JSON** to download the raw extraction, or **Send to LLM** to run sentiment analysis.
+
 ## Repository Purpose
 
 This repository currently contains the planning documents needed to begin implementation:
